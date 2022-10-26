@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.moyan.mapper.BookMapper">
+    <select id="queryBookByFactor" resultType="BookTmp">
+        SELECT `m_book`.*, `m_tag`.title AS tag
+        FROM `m_book`
+        LEFT JOIN `m_tag`
+        ON `m_book`.book_id = `m_tag`.book_id
+        WHERE `m_book`.title LIKE '${factor}';
+    </select>
+
+    <select id="queryBookByTag" resultType="BookTmp">
+        SELECT `m_book`.*, `m_tag`.title AS tag
+        FROM `m_book`
+        LEFT JOIN `m_tag`
+        ON `m_book`.`book_id` = `m_tag`.`book_id`
+        WHERE `m_tag`.title LIKE '${tag}';
+    </select>
+
+    <select id="queryBookByUserId" resultType="BookTmp">
+        SELECT `m_book`.*, `m_tag`.title AS tag
+        FROM `m_book`
+        LEFT JOIN `m_tag`
+        ON `m_book`.`book_id` = `m_tag`.`book_id`
+        WHERE `m_book`.`user_id` = ${userId}
+        AND `m_book`.`status` = TRUE;
+    </select>
+
+
+
+</mapper>

@@ -1,0 +1,27 @@
+{
+  "groups": [
+    {
+      "name": "moyan.jwt",
+      "type": "com.moyan.util.JwtUtils",
+      "sourceType": "com.moyan.util.JwtUtils"
+    }
+  ],
+  "properties": [
+    {
+      "name": "moyan.jwt.expire",
+      "type": "java.lang.Long",
+      "sourceType": "com.moyan.util.JwtUtils"
+    },
+    {
+      "name": "moyan.jwt.header",
+      "type": "java.lang.String",
+      "sourceType": "com.moyan.util.JwtUtils"
+    },
+    {
+      "name": "moyan.jwt.secret",
+      "type": "java.lang.String",
+      "sourceType": "com.moyan.util.JwtUtils"
+    }
+  ],
+  "hints": []
+}
